@@ -2,14 +2,14 @@
 
 import litellm
 from litellm import completion
-from langfuse.decorators import observe
+from langfuse import observe
 
 # Langfuse callback for automatic tracing of all LLM calls
 litellm.success_callback = ["langfuse"]
 litellm.failure_callback = ["langfuse"]
 
 
-@observe()
+@observe(name="call_llm")
 def call_llm(
     prompt: str,
     model: str = "openai/gpt-4o",

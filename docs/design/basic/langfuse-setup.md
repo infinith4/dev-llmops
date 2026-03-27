@@ -15,7 +15,7 @@ VS Code で `Dev Containers: Rebuild Container` を実行する。
 ### 2. Langfuse 起動
 
 ```bash
-cd /workspaces/dev-langfuse/langfuse
+cd /workspaces/dev-llmops/langfuse
 docker compose up -d
 ```
 

@@ -160,7 +160,7 @@ GEMINI_API_KEY=xxx
 
 ```bash
 # FastAPI 起動
-cd /workspaces/dev-langfuse
+cd /workspaces/dev-llmops
 pip install -r backendapp/requirements.txt
 uvicorn backendapp.main:app --reload
 

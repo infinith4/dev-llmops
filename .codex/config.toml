@@ -14,32 +14,6 @@ model = "o4-mini"
 # 履歴を保存
 history = true
 
-[agents]
-# 利用可能なエージェント
-# 詳細は agents/*.md を参照
-available = [
-    # 開発エージェント
-    "requirements-agent",
-    "ui-spec-agent",
-    "basic-design-agent",
-    "detailed-design-agent",
-    "api-spec-agent",
-    "implementation-agent-typescript",
-    "implementation-agent-python",
-    "implementation-agent-csharp",
-    "implementation-agent-java",
-    "unit-test-agent",
-    "e2e-test-agent",
-    "code-review-agent",
-    # PMエージェント
-    "pm-business-flow-agent",
-    "pm-requirements-planning-agent",
-    "pm-wbs-agent",
-    "pm-schedule-agent",
-    "pm-resource-agent",
-    "pm-risk-agent"
-]
-
 [workspace]
 # 作業ディレクトリ
 root = "."

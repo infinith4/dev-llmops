@@ -38,7 +38,7 @@
       "Bash(npx tsx src/index.ts add --help)",
       "Bash(npx tsx src/index.ts edit --help)",
       "WebFetch(domain:langfuse.com)",
-      "Bash(find /workspaces/dev-langfuse -type f \\\\\\( -name \"package.json\" -o -name \"requirements.txt\" -o -name \"pom.xml\" -o -name \"*.csproj\" \\\\\\) -exec head -30 {} +)",
+      "Bash(find /workspaces/dev-llmops -type f \\\\\\( -name \"package.json\" -o -name \"requirements.txt\" -o -name \"pom.xml\" -o -name \"*.csproj\" \\\\\\) -exec head -30 {} +)",
       "Bash(docker --version)",
       "Bash(docker compose version)",
       "Bash(apt list --installed)",

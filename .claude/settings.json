@@ -30,7 +30,22 @@
       "Write",
       "Edit",
       "Glob",
-      "Grep"
+      "Grep",
+      "Bash(docker compose:*)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3000/)",
+      "Bash(curl -sI http://localhost:3000/)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3600/)",
+      "Bash(ls /workspaces/dev-llmops/backendapp/.env*)",
+      "Bash(curl -s http://localhost:3600/api/public/health)",
+      "Bash(pip list:*)",
+      "Bash(pip install:*)",
+      "Bash(python -m backendapp.demo_trace)",
+      "Bash(python -c \"import langfuse; print\\(langfuse.__version__\\); print\\(dir\\(langfuse.Langfuse\\(\\)\\)\\)\")",
+      "Bash(pip show:*)",
+      "Bash(python -c \"from langfuse import Langfuse; lf = Langfuse\\(\\); print\\([m for m in dir\\(lf\\) if not m.startswith\\(''''_''''\\)]\\)\")",
+      "Bash(python -c \":*)",
+      "Bash(curl -s -u \"pk-lf-dev-local:sk-lf-dev-local\" \"http://localhost:3600/api/public/traces?limit=5\")",
+      "Bash(python -m json.tool)"
     ],
     "deny": [
       "Bash(rm -rf /)",

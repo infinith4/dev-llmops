@@ -1,8 +1,8 @@
 {
-  "name": "dev-langfuse",
+  "name": "dev-llmops",
   "dockerComposeFile": "docker-compose.yml",
   "service": "devcontainer",
-  "workspaceFolder": "/workspaces/dev-langfuse",
+  "workspaceFolder": "/workspaces/dev-llmops",
   "features": {
     "ghcr.io/devcontainers/features/node:1": {
       "version": "22"

@@ -16,9 +16,9 @@ from backendapp.llm_service import call_llm  # noqa: E402
 async def lifespan(app: FastAPI):
     yield
     # Flush Langfuse events on shutdown
-    from langfuse.decorators import langfuse_context
+    from langfuse import get_client
 
-    langfuse_context.flush()
+    get_client().flush()
 
 
 app = FastAPI(
