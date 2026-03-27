@@ -1,0 +1,119 @@
+# =========================
+# Node.js / TypeScript
+# =========================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.npm
+.yarn-integrity
+dist/
+build/
+*.tsbuildinfo
+.eslintcache
+.env
+.env.local
+.env.*.local
+
+# =========================
+# Python
+# =========================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+develop-eggs/
+eggs/
+.eggs/
+*.egg-info/
+*.egg
+.installed.cfg
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.manifest
+*.spec
+pip-log.txt
+pip-delete-this-directory.txt
+.venv/
+venv/
+ENV/
+env/
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+.mypy_cache/
+.ruff_cache/
+.hypothesis/
+*.cover
+*.log
+
+# =========================
+# C# / .NET
+# =========================
+bin/
+obj/
+*.user
+*.userosscache
+*.suo
+*.cache
+*.dll
+*.exe
+*.pdb
+*.nupkg
+project.lock.json
+.vs/
+*.DotSettings.user
+TestResults/
+[Bb]uild[Ll]og.*
+*.vspscc
+*.vssscc
+.builds
+
+# =========================
+# Java
+# =========================
+*.class
+*.jar
+*.war
+*.ear
+*.nar
+target/
+.gradle/
+build/
+!gradle/wrapper/gradle-wrapper.jar
+.idea/
+*.iml
+*.ipr
+*.iws
+out/
+.settings/
+.classpath
+.project
+.factorypath
+hs_err_pid*
+replay_pid*
+
+# =========================
+# IDE / Editor
+# =========================
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# =========================
+# OS
+# =========================
+*.bak
+*.tmp
+*.temp

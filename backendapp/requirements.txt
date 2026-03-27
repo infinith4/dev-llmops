@@ -1,0 +1,8 @@
+fastapi>=0.110.0
+uvicorn[standard]
+pydantic
+litellm
+langfuse
+python-dotenv
+pytest
+httpx

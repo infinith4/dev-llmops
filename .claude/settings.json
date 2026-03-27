@@ -1,0 +1,45 @@
+{
+  "$schema": "https://claude.ai/schemas/claude-code-settings.json",
+  "permissions": {
+    "allow": [
+      "Bash(git status*)",
+      "Bash(git diff*)",
+      "Bash(git log*)",
+      "Bash(git branch*)",
+      "Bash(npm run lint*)",
+      "Bash(npm run test*)",
+      "Bash(npm run build*)",
+      "Bash(npx prettier*)",
+      "Bash(npx eslint*)",
+      "Bash(pytest*)",
+      "Bash(ruff check*)",
+      "Bash(ruff format*)",
+      "Bash(mypy*)",
+      "Bash(dotnet build*)",
+      "Bash(dotnet test*)",
+      "Bash(mvn test*)",
+      "Bash(mvn compile*)",
+      "Bash(npx playwright test*)",
+      "Bash(docker compose*)",
+      "Bash(docker ps*)",
+      "Bash(ls*)",
+      "Bash(cat*)",
+      "Bash(head*)",
+      "Bash(tail*)",
+      "Read",
+      "Write",
+      "Edit",
+      "Glob",
+      "Grep"
+    ],
+    "deny": [
+      "Bash(rm -rf /)",
+      "Bash(git push --force*)",
+      "Bash(git reset --hard*)"
+    ]
+  },
+  "env": {
+    "NODE_ENV": "development",
+    "PYTHONDONTWRITEBYTECODE": "1"
+  }
+}

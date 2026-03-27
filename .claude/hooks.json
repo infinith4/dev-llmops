@@ -1,0 +1,45 @@
+{
+  "$schema": "https://claude.ai/schemas/claude-code-hooks.json",
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Edit",
+        "description": "TypeScript/JavaScript: Format before edit",
+        "command": "if [[ \"$CLAUDE_FILE_PATH\" =~ \\.(ts|tsx|js|jsx)$ ]]; then npx prettier --write \"$CLAUDE_FILE_PATH\" 2>/dev/null || true; fi"
+      },
+      {
+        "matcher": "Edit",
+        "description": "Python: Format before edit",
+        "command": "if [[ \"$CLAUDE_FILE_PATH\" =~ \\.py$ ]]; then ruff format \"$CLAUDE_FILE_PATH\" 2>/dev/null || true; fi"
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Edit",
+        "description": "TypeScript/JavaScript: Lint after edit",
+        "command": "if [[ \"$CLAUDE_FILE_PATH\" =~ \\.(ts|tsx|js|jsx)$ ]]; then npx eslint \"$CLAUDE_FILE_PATH\" --fix 2>/dev/null || true; fi"
+      },
+      {
+        "matcher": "Edit",
+        "description": "Python: Lint after edit",
+        "command": "if [[ \"$CLAUDE_FILE_PATH\" =~ \\.py$ ]]; then ruff check \"$CLAUDE_FILE_PATH\" --fix 2>/dev/null || true; fi"
+      },
+      {
+        "matcher": "Write",
+        "description": "TypeScript/JavaScript: Format and lint after write",
+        "command": "if [[ \"$CLAUDE_FILE_PATH\" =~ \\.(ts|tsx|js|jsx)$ ]]; then npx prettier --write \"$CLAUDE_FILE_PATH\" && npx eslint \"$CLAUDE_FILE_PATH\" --fix 2>/dev/null || true; fi"
+      },
+      {
+        "matcher": "Write",
+        "description": "Python: Format and lint after write",
+        "command": "if [[ \"$CLAUDE_FILE_PATH\" =~ \\.py$ ]]; then ruff format \"$CLAUDE_FILE_PATH\" && ruff check \"$CLAUDE_FILE_PATH\" --fix 2>/dev/null || true; fi"
+      }
+    ],
+    "PostCommit": [
+      {
+        "description": "Run tests after commit",
+        "command": "echo '✅ Commit completed. Consider running tests to verify changes.'"
+      }
+    ]
+  }
+}

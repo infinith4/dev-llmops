@@ -1,0 +1,29 @@
+{
+  "include": [
+    "AGENTS.md",
+    "CLAUDE.md",
+    ".agent",
+    ".copilot/INSTRUCTIONS.md",
+    "backendapp/main.py",
+    "frontend/src/App.tsx",
+    "frontend/src/api.ts",
+    "frontend/src/components",
+    "batch-csharp/BatchProcessor.cs",
+    "batch-csharp/Program.cs",
+    "csharp-backend/Program.cs",
+    "csharp-backend/Models",
+    "csharp-backend/Services",
+    "java-backend/src/main/java/com/example/backend"
+  ],
+  "exclude": [
+    "node_modules",
+    ".git",
+    "__pycache__",
+    "*.pyc",
+    "bin",
+    "obj",
+    "target",
+    "dist",
+    "build"
+  ]
+}

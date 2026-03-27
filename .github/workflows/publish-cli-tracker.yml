@@ -1,0 +1,50 @@
+name: Publish cli-tracker
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'cli-tracker/**'
+  workflow_dispatch:
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: cli-tracker
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          registry-url: 'https://registry.npmjs.org'
+
+      - run: npm install -g npm@latest
+
+      - run: npm ci
+
+      - run: npm test
+
+      - run: npm run build
+
+      - name: Check if version already published
+        id: version-check
+        run: |
+          LOCAL_VERSION=$(node -p "require('./package.json').version")
+          PUBLISHED=$(npm view @infinith4/cli-tracker version 2>/dev/null || echo "")
+          if [ "$LOCAL_VERSION" = "$PUBLISHED" ]; then
+            echo "skip=true" >> "$GITHUB_OUTPUT"
+            echo "Version $LOCAL_VERSION is already published. Skipping."
+          else
+            echo "skip=false" >> "$GITHUB_OUTPUT"
+            echo "Publishing version $LOCAL_VERSION"
+          fi
+
+      - name: Publish to npm
+        if: steps.version-check.outputs.skip != 'true'
+        run: npm publish --provenance --access public
