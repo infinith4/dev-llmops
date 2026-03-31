@@ -3,6 +3,10 @@ uvicorn[standard]
 pydantic
 litellm
 langfuse
+ragas>=0.4.0
+rapidfuzz
+sacrebleu
+rouge-score
 python-dotenv
 pytest
 httpx
