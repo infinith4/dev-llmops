@@ -108,6 +108,10 @@ Done! Check Langfuse UI: http://localhost:3600
 
 左ペインに `demo-chat` → `context-retrieval` → `llm-response` のツリーが表示され、右ペインで選択したオブザベーションの Input/Output・メタデータが確認できる。
 
+![demo-chat フローチャート表示](attachements/Pasted%20image%2020260331154000.png)
+
+Timeline ビューではフローチャート形式で `demo-chat` → `context-retrieval` → `llm-response` の実行順序が視覚的に表示される。
+
 #### トレース構造
 
 ```
@@ -182,6 +186,12 @@ agentic-rag-pipeline                              (span)
 │
 └── response-formatting                            (span)
 ```
+
+#### Observations タブ（全オブザベーション一覧）
+
+Observations タブを開くと、24 件すべてのオブザベーションがテーブル形式で一覧表示される。各行にオブザベーションの型（GENERATION / RETRIEVER / TOOL 等）、モデル名、トークン数、スコアが表示される。
+
+![agentic-rag-pipeline Observations 一覧](attachements/Pasted%20image%2020260331153904.png)
 
 #### 各ステップの詳細
 
@@ -264,17 +274,9 @@ Q&A テストケースのデータセット評価である。
 
 **Datasets** メニュー（左メニュー > Datasets）から `qa-evaluation-set` を開くと、3 件のテストケースが表示される。
 
-```
-┌─ Dataset: qa-evaluation-set ──────────────────────────────────────────────┐
-│ Description: Q&Aの品質評価用データセット                                     │
-├───┬─────────────────────────────────────┬─────────────────────────────────┤
-│ # │ Input                               │ Expected Output                 │
-├───┼─────────────────────────────────────┼─────────────────────────────────┤
-│ 1 │ Pythonのリスト内包表記とは？           │ リスト内包表記は、forループを...    │
-│ 2 │ RESTとGraphQLの違いは？              │ RESTはリソースごとに...            │
-│ 3 │ Docker Composeの用途は？             │ 複数のDockerコンテナを...          │
-└───┴─────────────────────────────────────┴─────────────────────────────────┘
-```
+![qa-evaluation-set データセットアイテム一覧](attachements/Pasted%20image%2020260331154112.png)
+
+各アイテムの Input（質問文）と Expected Output（期待される回答）が一覧で確認できる。Status 列でアイテムの状態も管理される。
 
 #### 各テストケースのトレース構造
 
@@ -288,6 +290,10 @@ dataset-run
 ![dataset-run 個別アイテム詳細](attachements/Pasted%20image%2020260331152543.png)
 
 個別の `dataset-run` トレースを開くと、Input の質問文と Expected Output が右ペインに表示される。generation の出力と期待値が一致していることが確認できる。
+
+![dataset-run スコア詳細](attachements/Pasted%20image%2020260331154251.png)
+
+Scores タブを開くと、各テストケースに付与された `correctness` スコアや Evaluator による自動評価結果が一覧表示される。コメント欄に評価理由が記録されている。
 
 ---
 
