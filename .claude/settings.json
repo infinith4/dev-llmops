@@ -44,11 +44,7 @@
       "Bash(pip show:*)",
       "Bash(python -c \"from langfuse import Langfuse; lf = Langfuse\\(\\); print\\([m for m in dir\\(lf\\) if not m.startswith\\(''''_''''\\)]\\)\")",
       "Bash(python -c \":*)",
-      "Bash(curl -s -u \"pk-lf-dev-local:sk-lf-dev-local\" \"http://localhost:3600/api/public/traces?limit=5\")",
       "Bash(python -m json.tool)",
-      "Bash(curl -s -u \"pk-lf-19f4b89a-5ea9-4175-8376-d533adfecc00:sk-lf-b6af1ca8-447d-41ad-8f10-184e05188744\" \"http://localhost:3600/api/public/observations?traceId=5661d88c213c16d263bb57c9b2910b2d&limit=30\")",
-      "Bash(curl -s -u \"pk-lf-19f4b89a-5ea9-4175-8376-d533adfecc00:sk-lf-b6af1ca8-447d-41ad-8f10-184e05188744\" \"http://localhost:3600/api/public/traces?limit=10\")",
-      "Bash(curl -s -u \"pk-lf-19f4b89a-5ea9-4175-8376-d533adfecc00:sk-lf-b6af1ca8-447d-41ad-8f10-184e05188744\" \"http://localhost:3600/api/public/traces?limit=30\")"
     ],
     "deny": [
       "Bash(rm -rf /)",
